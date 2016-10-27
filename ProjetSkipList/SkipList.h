@@ -172,12 +172,12 @@ template<typename K, typename V>
 inline void SkipList<K, V>::print()
 {
 	SkipListEntry<K,V>* list = m_head;
-	cout << endl << "{";
-	while (list->getForwardEntry(0) != nullptr) {
-		cout	<< "value: " << list->getForwardEntry(0)->getValue()->getName()
-					<< ", key: " << list->getForwardEntry(0)->getKey()
-					<< ", level: " << entriesLevel(list->getForwardEntries())
-					<< endl;
+	cout << endl << "{" << endl;
+	while (list->getForwardEntry(0) != m_tail) {
+		K k = list->getForwardEntry(0)->getKey();
+		V v = *(list->getForwardEntry(0)->getValue());
+		int l = entriesLevel(list->getForwardEntries());
+		cout	<< "key: " << k << ", value: " << v << ", level: " << l		<< endl;
 		list = list->getForwardEntry(0);
 	}
 	cout << "}" << endl;

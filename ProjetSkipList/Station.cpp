@@ -12,3 +12,8 @@ Station::Station(string name, string city):
 Station::~Station()
 {
 }
+
+ostream& operator<<(ostream& flux, Station s) {
+	flux << s.getName().c_str();
+	return flux;
+}

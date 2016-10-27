@@ -18,6 +18,7 @@ public:
 	/*destructor*/
 	~Station();
 
+
 	/*getter*/
 	string getName()		{ return m_name; };
 	string	getCityName()	{ return m_city; };
@@ -25,5 +26,7 @@ public:
 	/*setter*/
 	void setName(string name)	{ m_name = name; };
 };
+
+ostream& operator<<(ostream& flux, Station s);
 
 #endif
