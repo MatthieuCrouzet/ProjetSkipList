@@ -1,0 +1,19 @@
+12
+Lyon Part-Dieu
+Venissieux
+Saint-Priest
+Saint-Quentin Fallavier 
+La Verpilliere 
+L'Isle D'abeau 
+Bourgoin-Jallieu 
+La Tour-Du-Pin 
+Saint-Andre-Le-Gaz 
+Voiron 
+Moirans 
+Grenoble
+6
+1 5 7 8 10 12
+4
+1 7 10 12
+2
+1 12

@@ -1,0 +1,16 @@
+number of stations X0
+stationFirst
+station2 
+.
+.
+.
+stationLast
+number of stations X1 (must be less than X0)
+stationFirst station3 station5 ... stationLast (must begin by stationFirst and end by stationLast)
+number of stations X2 (must be less than X1)
+stationFirst station5 ... stationLast
+.
+.
+.
+number of stations XN (must be less than X(N-1))
+stationFirst stationLast
