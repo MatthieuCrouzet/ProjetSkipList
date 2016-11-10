@@ -142,24 +142,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="City.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="BusLineParser.cpp" />
-    <ClCompile Include="SkipList.cpp" />
-    <ClCompile Include="SkipListEntry.cpp" />
-    <ClCompile Include="RandomHeight.cpp" />
+    <ClCompile Include="Path.cpp" />
     <ClCompile Include="Station.cpp" />
+    <ClCompile Include="TrainLineParser.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="City.h" />
-    <ClInclude Include="BusLineParser.h" />
-    <ClInclude Include="RandomHeight.h" />
+    <ClInclude Include="Line.h" />
+    <ClInclude Include="Path.h" />
+    <ClInclude Include="TrainLineParser.h" />
     <ClInclude Include="SkipList.h" />
     <ClInclude Include="SkipListEntry.h" />
     <ClInclude Include="Station.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Line1.txt" />
+    <Text Include="lineModel.txt" />
+    <Text Include="LyonGrenoble.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

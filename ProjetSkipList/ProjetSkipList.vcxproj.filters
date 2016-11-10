@@ -18,22 +18,16 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SkipList.cpp">
+    <ClCompile Include="Line.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SkipListEntry.cpp">
+    <ClCompile Include="TrainLineParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Station.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RandomHeight.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="City.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BusLineParser.cpp">
+    <ClCompile Include="Path.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,18 +41,21 @@
     <ClInclude Include="Station.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RandomHeight.h">
+    <ClInclude Include="Line.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="City.h">
+    <ClInclude Include="TrainLineParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BusLineParser.h">
+    <ClInclude Include="Path.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Line1.txt">
+    <Text Include="LyonGrenoble.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="lineModel.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
