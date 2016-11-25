@@ -1,7 +1,7 @@
 #include "Line.h"
-//#include "Line.h"
-//
-//using namespace std;
+#include <map>
+
+using namespace std;
 //
 //Line::Line(string name):
 //	m_name(name)
@@ -60,3 +60,51 @@ Line::Line(SkipListEntry<Station>* first, SkipListEntry<Station>* last):
 	SkipList<Station>(first, last)
 {
 }
+
+void printRecLine(SkipListEntry<Station>* current, int lastStation, map<int, int>& linePrinted) {
+
+	int key = current->getKey();
+	for (int i = lastStation + 1; i < key; i++) {
+		cout << "--";
+		for (int j = 0; j < floor(log10(abs(i))) + 1; j++)
+			cout << "-";
+	}
+
+	cout << "--" << key;
+
+	size_t tempSize = current->getAllNext().size();
+	if (tempSize != 0) {
+		printRecLine(current->getNext(linePrinted[key]), key, linePrinted);
+		linePrinted[key]++;
+	}
+}
+
+void printRecStationsNames(SkipListEntry<Station>* current, int nb)
+{
+	cout << "- " << nb << "  " << current->getValue().name.c_str() << endl;
+
+	size_t tempSize = current->getAllNext().size();
+	if (tempSize != 0) {
+		printRecStationsNames(current->getNext(tempSize - 1), nb + 1);
+	}
+}
+
+void Line::printLine()
+{
+	size_t nbLines = m_head->getAllNext().size();
+	int nbStops = m_tail->getKey(); // nb stop is from 1 to max Key
+
+	map<int, int> linePrinted;
+
+	for (int i = 0; i < nbLines; i++) {
+		SkipListEntry<Station>* temp = m_head->getAllNext()[i];
+		cout << "1";
+		printRecLine(temp, 1, linePrinted);
+		cout << endl;
+	}
+
+	cout << endl;
+	printRecStationsNames(m_head, 1);
+}
+
+

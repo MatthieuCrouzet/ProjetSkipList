@@ -55,6 +55,8 @@ int main() {
 
 	TrainLineParser parser("LyonGrenoble.txt");
 	Line lyonGrenoble = parser.parseFile();
+	
+
 	/*
 		*						*			*		*		- 1 Lyon Part-Dieu			 - 5 La Verpilliere		- 9  Saint-Andre-Le-Gaz
 		*				*		*	*		*		*		- 2 Venissieux				 - 6 L'Isle D'abeau		- 10 Voiron	
@@ -64,24 +66,7 @@ int main() {
 	int from, to;
 	bool retry = true;
 	while (retry) {
-		cout << "*-----------------------------------*" << endl;
-		cout << "*-----------------*---------*-------*" << endl;
-		cout << "*-----------*-----*--*------*-------*" << endl;	
-		cout << "*--*--*--*--*--*--*--*--*---*---*---*" << endl;	
-		cout << "1--2--3--4--5--6--7--8--9--10--11--12" << endl;
-		cout << endl;
-		cout << "- 1  Lyon Part-Dieu" << endl;
-		cout << "- 2  Venissieux" << endl;
-		cout << "- 3  Saint-Priest" << endl;
-		cout << "- 4  Saint-Quentin Fallavier" << endl;
-		cout << "- 5  La Verpilliere" << endl;
-		cout << "- 6  L'Isle D'abeau" << endl;
-		cout << "- 7  Bourgoin-Jallieu" << endl;
-		cout << "- 8  La Tour-Du-Pin" << endl;
-		cout << "- 9  Saint-Andre-Le-Gaz" << endl;
-		cout << "- 10 Voiron" << endl;
-		cout << "- 11 Moirans" << endl;
-		cout << "- 12 Grenoble" << endl;
+		lyonGrenoble.printLine();
 		cout << endl << "Entrer the key of the station you are : ";
 		cin >> from;
 		cout << "Entrer the key of the station where you want to go : ";

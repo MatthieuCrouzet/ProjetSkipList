@@ -11,7 +11,7 @@ using namespace std;
 template<typename V>
 class SkipList
 {
-private:
+protected:
 	SkipListEntry<V>* m_head; //A pointer on the first element
 	SkipListEntry<V>* m_tail; //A pointer on the last element
 	SkipListEntry<V>* find(int key); //returns a the element which has this key or throw an error if any element has this key
