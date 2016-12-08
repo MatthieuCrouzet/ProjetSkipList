@@ -37,16 +37,16 @@ using namespace std;
 //	return nullptr;
 //}
 //
-//SkipListEntry<int, Station>* Line::toSkipListEntries(int lvl, SkipListEntry<int, Station>* tail)
+//SkipListNode<int, Station>* Line::toSkipListEntries(int lvl, SkipListNode<int, Station>* tail)
 //{
-//	SkipListEntry<int, Station>* curr = nullptr;
-//	SkipListEntry<int, Station>* prev = nullptr;
-//	SkipListEntry<int, Station>* head = nullptr;
+//	SkipListNode<int, Station>* curr = nullptr;
+//	SkipListNode<int, Station>* prev = nullptr;
+//	SkipListNode<int, Station>* head = nullptr;
 //	if (m_stations.size() > 0) {
-//		head = new SkipListEntry<int, Station>(m_stations[0]->getKey(), m_stations[0], lvl);
+//		head = new SkipListNode<int, Station>(m_stations[0]->getKey(), m_stations[0], lvl);
 //		prev = head;
 //		for (int i = 1; i < m_stations.size(); i++) {
-//			curr = new SkipListEntry<int, Station>(m_stations[i]->getKey(), m_stations[i], lvl);
+//			curr = new SkipListNode<int, Station>(m_stations[i]->getKey(), m_stations[i], lvl);
 //			prev->setForwardEntry(0, curr);
 //			prev = curr;
 //		}
@@ -56,12 +56,12 @@ using namespace std;
 //}
 //
 
-Line::Line(SkipListEntry<Station>* first, SkipListEntry<Station>* last):
+Line::Line(SkipListNode<Station>* first, SkipListNode<Station>* last):
 	SkipList<Station>(first, last)
 {
 }
 
-void printRecLine(SkipListEntry<Station>* current, int lastStation, map<int, int>& linePrinted) {
+void printRecLine(SkipListNode<Station>* current, int lastStation, map<int, int>& linePrinted) {
 
 	int key = current->getKey();
 	for (int i = lastStation + 1; i < key; i++) {
@@ -79,7 +79,7 @@ void printRecLine(SkipListEntry<Station>* current, int lastStation, map<int, int
 	}
 }
 
-void printRecStationsNames(SkipListEntry<Station>* current, int nb)
+void printRecStationsNames(SkipListNode<Station>* current, int nb)
 {
 	cout << "- " << nb << "  " << current->getValue().name.c_str() << endl;
 
@@ -97,7 +97,7 @@ void Line::printLine()
 	map<int, int> linePrinted;
 
 	for (int i = 0; i < nbLines; i++) {
-		SkipListEntry<Station>* temp = m_head->getAllNext()[i];
+		SkipListNode<Station>* temp = m_head->getAllNext()[i];
 		cout << "1";
 		printRecLine(temp, 1, linePrinted);
 		cout << endl;

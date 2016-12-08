@@ -153,7 +153,7 @@
     <ClInclude Include="Path.h" />
     <ClInclude Include="TrainLineParser.h" />
     <ClInclude Include="SkipList.h" />
-    <ClInclude Include="SkipListEntry.h" />
+    <ClInclude Include="SkipListNode.h" />
     <ClInclude Include="Station.h" />
   </ItemGroup>
   <ItemGroup>

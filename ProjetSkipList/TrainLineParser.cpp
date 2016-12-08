@@ -13,9 +13,9 @@ TrainLineParser::TrainLineParser(string filename)
 }
 
 
-void makeLevel(vector<int> keys, vector<SkipListEntry<Station>*> stations) {
-	SkipListEntry<Station>* current(nullptr);
-	SkipListEntry<Station>* next(nullptr);
+void makeLevel(vector<int> keys, vector<SkipListNode<Station>*> stations) {
+	SkipListNode<Station>* current(nullptr);
+	SkipListNode<Station>* next(nullptr);
 	for (int i = 0; i < stations.size(); i++) {
 		if (stations[i]->getKey() == keys[0]) {
 			current = stations[i];
@@ -40,7 +40,7 @@ Line TrainLineParser::parseFile()
 {
 	if (m_file.is_open())
 	{
-		vector<SkipListEntry<Station>*> stations = vector<SkipListEntry<Station>*>();
+		vector<SkipListNode<Station>*> stations = vector<SkipListNode<Station>*>();
 		vector<int> keys = vector<int>();
 		string station;
 		int nbStations, nbStationsTotal, previous;
@@ -51,7 +51,7 @@ Line TrainLineParser::parseFile()
 		getline(m_file, station); //ignored end of first line
 		for (int i = 1; i <= nbStations; i++) {
 			getline(m_file, station);
-			stations.push_back(new SkipListEntry<Station>(i, Station(station)));
+			stations.push_back(new SkipListNode<Station>(i, Station(station)));
 			keys.push_back(i);
 		}
 		makeLevel(keys, stations);

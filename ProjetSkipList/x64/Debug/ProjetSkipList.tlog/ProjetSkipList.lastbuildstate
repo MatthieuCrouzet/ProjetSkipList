@@ -1,2 +1,2 @@
-#TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
-Debug|x64|C:\Users\Bureau\Desktop\Automne 2016\8inf840 - Structures de données avancées et leurs algorithmes\persoSkipList\|
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+Debug|x64|C:\Users\Porc\Desktop\UQAC\Structure données 8INF840\TPs\ProjetSkipList\|

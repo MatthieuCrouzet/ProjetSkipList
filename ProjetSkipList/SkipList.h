@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "SkipListEntry.h"
+#include "SkipListNode.h"
 #include "Path.h"
 
 using namespace std;
@@ -12,11 +12,11 @@ template<typename V>
 class SkipList
 {
 protected:
-	SkipListEntry<V>* m_head; //A pointer on the first element
-	SkipListEntry<V>* m_tail; //A pointer on the last element
-	SkipListEntry<V>* find(int key); //returns a the element which has this key or throw an error if any element has this key
+	SkipListNode<V>* m_head; //A pointer on the first element
+	SkipListNode<V>* m_tail; //A pointer on the last element
+	SkipListNode<V>* find(int key); //returns a the element which has this key or throw an error if any element has this key
 public:
-	SkipList(SkipListEntry<V>* first, SkipListEntry<V>* last); //ctor
+	SkipList(SkipListNode<V>* first, SkipListNode<V>* last); //ctor
 		
 	Path<V> shortestPath(int fromKey, int toKey); //returns a vector with all element of the shortest path between the two keys
 };
@@ -24,16 +24,16 @@ public:
 
 
 template<typename V>
-SkipList<V>::SkipList(SkipListEntry<V>* first, SkipListEntry<V>* last) :
+SkipList<V>::SkipList(SkipListNode<V>* first, SkipListNode<V>* last) :
 	m_head(first), m_tail(last)
 {
 }
 
 
 template<typename V>
-SkipListEntry<V>* SkipList<V>::find(int key)
+SkipListNode<V>* SkipList<V>::find(int key)
 {
-	SkipListEntry<V>* current(m_head);
+	SkipListNode<V>* current(m_head);
 	if (m_head != nullptr && m_head->getKey() == key) {
 		return m_head;
 	}
@@ -51,7 +51,7 @@ template<typename V>
 Path<V> SkipList<V>::shortestPath(int fromKey, int toKey)
 {
 	vector<V> path = vector<V>();
-	SkipListEntry<V>* current(nullptr);
+	SkipListNode<V>* current(nullptr);
 	if (fromKey > toKey) {
 		cout << "Impossible because key " << fromKey << " is after key " << toKey << endl;
 		return  Path<V>(vector<V>());

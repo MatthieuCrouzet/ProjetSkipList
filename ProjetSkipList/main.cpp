@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include "SkipListEntry.h"
+#include "SkipListNode.h"
 #include "SkipList.h"
 #include "Line.h"
 #include "TrainLineParser.h"
@@ -15,14 +15,14 @@ int main() {
 	
 	//	cout << "Entries creation" << endl;
 	//	
-	//	SkipListEntry<int>* one		= new SkipListEntry<int>(1, 1);
-	//	SkipListEntry<int>* two		= new SkipListEntry<int>(2, 2);
-	//	SkipListEntry<int>* three	= new SkipListEntry<int>(3, 3);
-	//	SkipListEntry<int>* four	= new SkipListEntry<int>(4, 4);
-	//	SkipListEntry<int>* five	= new SkipListEntry<int>(5, 5);
-	//	SkipListEntry<int>* six		= new SkipListEntry<int>(6, 6);
-	//	SkipListEntry<int>* seven	= new SkipListEntry<int>(7, 7);
-	//	SkipListEntry<int>* eight	= new SkipListEntry<int>(8, 8);
+	//	SkipListNode<int>* one		= new SkipListNode<int>(1, 1);
+	//	SkipListNode<int>* two		= new SkipListNode<int>(2, 2);
+	//	SkipListNode<int>* three	= new SkipListNode<int>(3, 3);
+	//	SkipListNode<int>* four	= new SkipListNode<int>(4, 4);
+	//	SkipListNode<int>* five	= new SkipListNode<int>(5, 5);
+	//	SkipListNode<int>* six		= new SkipListNode<int>(6, 6);
+	//	SkipListNode<int>* seven	= new SkipListNode<int>(7, 7);
+	//	SkipListNode<int>* eight	= new SkipListNode<int>(8, 8);
 	//	
 	//	/*
 	//		.							.
@@ -47,7 +47,7 @@ int main() {
 	//	
 	//	cout << "Calcul shortesWay from key 2 to key 7" << endl;
 	//	
-	//	vector<SkipListEntry<int>*> shortestPath = skipList.shortestPath(2, 7);
+	//	vector<SkipListNode<int>*> shortestPath = skipList.shortestPath(2, 7);
 	//	
 	//	for (int i = 0; i < shortestPath.size(); i++) {
 	//		cout << "Step " << i + 1 << " : " << shortestPath[i]->getValue() << endl;
