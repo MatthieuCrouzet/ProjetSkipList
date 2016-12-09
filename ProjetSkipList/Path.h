@@ -11,6 +11,7 @@ class Path
 {
 public:
 	Path(vector<T> path) { this->path = path; };
+	Path() { this->path = vector<T>(); };
 	vector<T> path;
 };
 

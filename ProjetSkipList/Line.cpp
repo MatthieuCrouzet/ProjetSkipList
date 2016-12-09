@@ -1,6 +1,6 @@
 #include "Line.h"
 #include <map>
-
+#include <windows.h>
 using namespace std;
 //
 //Line::Line(string name):
@@ -61,21 +61,47 @@ Line::Line(SkipListNode<Station>* first, SkipListNode<Station>* last):
 {
 }
 
-void printRecLine(SkipListNode<Station>* current, int lastStation, map<int, int>& linePrinted) {
+void printRecLine(SkipListNode<Station>* current, int lastStation, int linePrinted, Path<Station>& pathToPrint) {
 
 	int key = current->getKey();
+	size_t tempSize = current->getAllNext().size();
+	bool firstPrint = false;
+
+	//If it corresponds to the path, color in red
+	if (pathToPrint.path.size() > 0 ) {
+		for (int i = 0; i < pathToPrint.path.size() - 1; i++) {
+			if (pathToPrint.path[i].id == lastStation &&
+				pathToPrint.path[i + 1].id == key)
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN);
+			else if (i == 0 && pathToPrint.path[i].id == key &&
+				pathToPrint.path[i + 1].id == current->getNext(tempSize - 1 - linePrinted)->getKey()) {
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN);
+				firstPrint = true;
+			}
+		}
+	}
+
 	for (int i = lastStation + 1; i < key; i++) {
 		cout << "--";
 		for (int j = 0; j < floor(log10(abs(i))) + 1; j++)
 			cout << "-";
 	}
 
-	cout << "--" << key;
+	if(firstPrint)
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 
-	size_t tempSize = current->getAllNext().size();
-	if (tempSize != 0) {
-		printRecLine(current->getNext(linePrinted[key]), key, linePrinted);
-		linePrinted[key]++;
+	if (key != 1)
+		cout << "--";
+
+	if (firstPrint)
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN);
+	cout << key;
+
+
+	if (tempSize>0 && tempSize-1 >=linePrinted) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+		printRecLine(current->getNext(tempSize - 1 -linePrinted), key, linePrinted, pathToPrint);
+
 	}
 }
 
@@ -89,22 +115,19 @@ void printRecStationsNames(SkipListNode<Station>* current, int nb)
 	}
 }
 
-void Line::printLine()
+void Line::printLine(Path<Station> pathToPrint)
 {
 	size_t nbLines = m_head->getAllNext().size();
 	int nbStops = m_tail->getKey(); // nb stop is from 1 to max Key
 
-	map<int, int> linePrinted;
 
-	for (int i = 0; i < nbLines; i++) {
-		SkipListNode<Station>* temp = m_head->getAllNext()[i];
-		cout << "1";
-		printRecLine(temp, 1, linePrinted);
+
+	for (int i = nbLines-1; i >= 0; i--) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+		printRecLine(m_head, 1, i, pathToPrint);
 		cout << endl;
 	}
 
 	cout << endl;
 	printRecStationsNames(m_head, 1);
 }
-
-

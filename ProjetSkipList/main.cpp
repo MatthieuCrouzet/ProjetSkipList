@@ -66,18 +66,19 @@ int main() {
 	int from, to;
 	bool retry = true;
 	while (retry) {
-		lyonGrenoble.printLine();
+		lyonGrenoble.printLine(Path<Station>());
 		cout << endl << "Entrer the key of the station you are : ";
 		cin >> from;
 		cout << "Entrer the key of the station where you want to go : ";
 		cin >> to;
 		Path<Station> stationsOnPath = lyonGrenoble.shortestPath(from, to);
-
+		lyonGrenoble.printLine(stationsOnPath);
+		cout << endl;
 		for (int i = 0; i < stationsOnPath.path.size(); i++) {
 			if (i < 9)
-				cout << "Step " << i + 1 << "  : " << stationsOnPath.path[i] << endl;
+				cout << "\t > Step " << i + 1 << "  : " << stationsOnPath.path[i] << endl;
 			else
-				cout << "Step " << i + 1 << " : " << stationsOnPath.path[i] << endl;
+				cout << "\t > Step " << i + 1 << " : " << stationsOnPath.path[i] << endl;
 		}
 		bool yn = false;
 		char response;

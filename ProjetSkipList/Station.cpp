@@ -2,6 +2,6 @@
 
 ostream& operator<<(ostream &flux, Station const& s)
 {
-	flux << s.name.c_str();
+	flux << "("<<s.id<<")"<< s.name.c_str();
 	return flux;
 }

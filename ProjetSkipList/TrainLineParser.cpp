@@ -51,7 +51,7 @@ Line TrainLineParser::parseFile()
 		getline(m_file, station); //ignored end of first line
 		for (int i = 1; i <= nbStations; i++) {
 			getline(m_file, station);
-			stations.push_back(new SkipListNode<Station>(i, Station(station)));
+			stations.push_back(new SkipListNode<Station>(i, Station(station,i)));
 			keys.push_back(i);
 		}
 		makeLevel(keys, stations);

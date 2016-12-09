@@ -7,8 +7,9 @@ using namespace std;
 
 class Station {
 public:
-	Station(string name) { this->name = name; }
+	Station(string name,int id) { this->name = name; this->id = id;}
 	string name;
+	int id;
 };
 ostream& operator<<(ostream &flux, Station const& s);
 
