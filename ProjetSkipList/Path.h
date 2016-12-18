@@ -1,3 +1,9 @@
+/*AUTHORS :
+BRANGER Mathias
+CROUZET Matthieu
+
+Defines a path
+*/
 #pragma once
 #ifndef PATH_H
 #define PATH_H

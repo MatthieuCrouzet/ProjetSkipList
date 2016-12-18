@@ -1,3 +1,9 @@
+/*AUTHORS :
+BRANGER Mathias
+CROUZET Matthieu
+
+Defines a TrainLineParser
+*/
 #ifndef TRAIN_LINE_PARSER_H
 #define TRAIN_LINE_PARSER_H
 

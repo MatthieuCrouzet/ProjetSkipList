@@ -1,3 +1,9 @@
+/*AUTHORS :
+BRANGER Mathias
+CROUZET Matthieu
+
+Defines the structure of a skiplist
+*/
 #ifndef SKIPLIST_H
 #define SKIPLIST_H
 

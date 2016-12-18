@@ -1,3 +1,9 @@
+/*AUTHORS :
+BRANGER Mathias
+CROUZET Matthieu
+
+Defines a skipList node, component of skiplist
+*/
 #ifndef SKIPLIST_ENTRY_H
 #define SKIPLIST_ENTRY_H
 

@@ -1,3 +1,9 @@
+/*AUTHORS :
+BRANGER Mathias
+CROUZET Matthieu
+
+Functions to work on Line
+*/
 #include "Line.h"
 #include <map>
 #include <windows.h>

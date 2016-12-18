@@ -1,3 +1,10 @@
+/*AUTHORS :
+BRANGER Mathias
+CROUZET Matthieu
+
+Defines the structure of a transport Line
+*/
+
 #ifndef LINE_H
 #define LINE_H
 

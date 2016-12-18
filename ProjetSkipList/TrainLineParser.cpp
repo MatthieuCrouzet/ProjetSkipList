@@ -1,3 +1,9 @@
+/*AUTHORS :
+BRANGER Mathias
+CROUZET Matthieu
+
+Functions used to parse a transport Line
+*/
 #include <sstream>
 #include <algorithm>
 
